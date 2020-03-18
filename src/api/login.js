@@ -10,7 +10,7 @@ export function webLogin(jsonForm) {
 
 export function initMenu() {
   return request({
-    url: '/auth/initMenu',
+    url: '/auth/getWebMenuList',
     method: 'POST',
     data: {}
   })
