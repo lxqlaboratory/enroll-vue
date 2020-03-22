@@ -114,7 +114,12 @@ export default {
   },
   methods: {
     fetchData: function() {
-
+      webLogin({ }).then(res => {
+        this.$router.push({ path: '/dashboard' })
+      }).catch(err => {
+          this.loading = false
+          console.log(err)
+        })
     },
     showPwd() {
       if (this.passwordType === 'password') {

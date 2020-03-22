@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      title: '本科实践教学平台'
+      title: '报名平台'
     }
   }
 }
