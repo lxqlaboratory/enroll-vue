@@ -54,6 +54,34 @@ export const constantRoutes = [
     }]
     // meta: { title: '首页', icon: 'dashboard',roles: ['18'] }
   },
+  {
+    path: '/',
+    component: Layout,
+    name: 'enroll',
+    component: () => import('@/views/enroll/personInfomation'),
+    meta: {title: '个人信息', icon: 'example', roles: ['8'] },
+  },
+  {
+    path: '/',
+    component: Layout,
+    name: 'enroll',
+    component: () => import('@/views/enroll/enrollInstanceApply'),
+    meta: {title: '个人信息', icon: 'example', roles: ['9'] },
+  },
+  {
+    path: '/',
+    component: Layout,
+    name: 'enroll',
+    component: () => import('@/views/enroll/enrollInstanceConfig'),
+    meta: {title: '个人信息', icon: 'example', roles: ['6'] },
+  },
+  {
+    path: '/',
+    component: Layout,
+    name: 'enroll',
+    component: () => import('@/views/enroll/enrollInstanceManage'),
+    meta: {title: '个人信息', icon: 'example', roles: ['7'] },
+  },
 
   { path: '/', redirect: '/login', hidden: true },
   // 404 page must be placed at the end !!!
