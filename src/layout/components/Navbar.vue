@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     fetchData() {
-      initMenu().then(res => {
+      initMenu({'session': document.cookie }).then(res => {
         this.perName = res.data.perName
       })
     },

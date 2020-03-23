@@ -55,32 +55,48 @@ export const constantRoutes = [
     // meta: { title: '首页', icon: 'dashboard',roles: ['18'] }
   },
   {
-    path: '/',
+    path: '/enroll',
     component: Layout,
-    name: 'enroll',
-    component: () => import('@/views/enroll/personInfomation'),
-    meta: {title: '个人信息', icon: 'example', roles: ['8'] },
+    children: [{
+      path: 'personInfomation',
+      name: 'personInfomation',
+      component: () => import('@/views/enroll/personInfomation'),
+      meta: {title: '个人信息', icon: 'example', roles: ['8'] },
+    }]
+
   },
   {
-    path: '/',
+    path: '/enroll',
     component: Layout,
-    name: 'enroll',
-    component: () => import('@/views/enroll/enrollInstanceApply'),
-    meta: {title: '个人信息', icon: 'example', roles: ['9'] },
+    children: [{
+      path: 'enrollInstanceApply',
+      name: 'enrollInstanceApply',
+      component: () => import('@/views/enroll/enrollInstanceApply'),
+      meta: {title: '申请报名', icon: 'example', roles: ['9'] },
+    }]
+
   },
   {
-    path: '/',
+    path: '/enroll',
     component: Layout,
-    name: 'enroll',
-    component: () => import('@/views/enroll/enrollInstanceConfig'),
-    meta: {title: '个人信息', icon: 'example', roles: ['6'] },
+    children: [{
+      path: 'enrollInstanceConfig',
+      name: 'enrollInstanceConfig',
+      component: () => import('@/views/enroll/enrollInstanceConfig'),
+      meta: {title: '报名统计', icon: 'example', roles: ['6'] },
+    }]
+
   },
   {
-    path: '/',
+    path: '/enroll',
     component: Layout,
-    name: 'enroll',
-    component: () => import('@/views/enroll/enrollInstanceManage'),
-    meta: {title: '个人信息', icon: 'example', roles: ['7'] },
+    children: [{
+      path: 'enrollInstanceManage',
+      name: 'enrollInstanceManage',
+      component: () => import('@/views/enroll/enrollInstanceManage'),
+      meta: {title: '报名管理', icon: 'example', roles: ['7'] },
+    }]
+
   },
 
   { path: '/', redirect: '/login', hidden: true },

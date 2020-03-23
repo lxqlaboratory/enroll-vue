@@ -8,11 +8,11 @@ export function webLogin(jsonForm) {
   })
 }
 
-export function initMenu() {
+export function initMenu(data) {
   return request({
     url: '/auth/getWebMenuList',
     method: 'POST',
-    data: {}
+    data
   })
 }
 

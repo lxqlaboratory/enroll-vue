@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     fetchData() {
-      initMenu().then(res => {
+      initMenu({'session': document.cookie }).then(res => {
         this.menuList = res.data.menuList
       })
     },
