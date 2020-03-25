@@ -171,14 +171,7 @@
           viewStartTime: ''
         },
         projectId: '',
-        date: '',
-        showyemian: false,
-        showdetail: false,
-        index: 0,
         limitTypeList: [],
-        instanceId: '',
-        instanceName: '',
-        retType: '',
         item: {
           itemId: '',
           itemName: '',
@@ -193,19 +186,16 @@
     methods: {
       fetchData() {
         this.projectId = this.$route.query.projectId
-        getEnrollProjectInstanceDetail().then(res => {
+        getEnrollProjectInstanceDetail({'session': document.cookie }).then(res => {
           this.instance = res.data.instance
-          this.itemList = res.data.itemList
-          this.index = res.data.instance.limitTypeIndex
           this.limitTypeList = res.data.instance.limitTypeList
-          this.item = res.data.item
         }).catch(err => {
 
         })
       },
       submit(){
         var projectIds = this.projectId+''
-        saveOrUpdateEnrollProjectInstance({'instance': this.instance,'projectId': projectIds,'item':this.item}).then(res => {
+        saveOrUpdateEnrollProjectInstance({'session': document.cookie,'instance': this.instance,'projectId': projectIds,'item':this.item}).then(res => {
           if (res.re === 1) {
             this.$message({
               message: '保存成功',

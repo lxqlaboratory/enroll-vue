@@ -5,8 +5,9 @@
        <td colspan="1" style="font-size: 16px;font-weight: bold;color: #304156 ">{{instanceName}}</td>
    </tr>
      <tr>
-       <td colspan="6">
-         <tinymce v-model="instanceDes" :height="450" />
+       <td colspan="6" v-html="instanceDes">
+
+
        </td>
      </tr>
    </table>

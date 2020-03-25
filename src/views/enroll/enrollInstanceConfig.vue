@@ -61,7 +61,7 @@
     },
     methods: {
       fetchData() {
-        getEnrollProjectInfoListOfManage({}).then(res => {
+        getEnrollProjectInfoListOfManage({'session': document.cookie }).then(res => {
           this.projectList = res.data
 
 

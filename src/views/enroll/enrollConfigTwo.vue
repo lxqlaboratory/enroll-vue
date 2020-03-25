@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     fetchData() {
-      getEnrollProjectInstanceListOfProject({ 'projectId': this.$route.query.projectId }).then(res => {
+      getEnrollProjectInstanceListOfProject({ 'session': document.cookie ,'projectId': this.$route.query.projectId }).then(res => {
         this.ProjectInstanceList = res.data
       }).catch(err => {
 
