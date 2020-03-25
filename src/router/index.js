@@ -106,7 +106,21 @@ export const constantRoutes = [
       name: 'enrollInstanceConfig',
       component: () => import('@/views/enroll/enrollInstanceConfig'),
       meta: {title: '报名统计', icon: 'example', roles: ['6'] },
-    }]
+    }, {
+      path: 'enrollConfigTwo',
+      name: 'enrollConfigTwo',
+      component: () => import('@/views/enroll/enrollConfigTwo'),
+      hidden: true,
+      meta: {title: '类型2统计信息', icon: 'example' },
+    },
+      {
+        path: 'enrollConfigTwoDetail',
+        name: 'enrollConfigTwoDetail',
+        component: () => import('@/views/enroll/enrollConfigTwoDetail'),
+        hidden: true,
+        meta: {title: '编辑', icon: 'example' },
+      }
+    ]
 
   },
   {
@@ -124,6 +138,13 @@ export const constantRoutes = [
         component: () => import('@/views/enroll/enrollInstanceManageList'),
         hidden: true,
         meta: {title: '报名列表', icon: 'example' },
+      },
+      {
+        path: 'enrollConfigTwoAdd',
+        name: 'enrollConfigTwoAdd',
+        component: () => import('@/views/enroll/enrollConfigTwoAdd'),
+        hidden: true,
+        meta: {title: '报名添加', icon: 'example' },
       },
       {
         path: 'enrollInstanceMangePerson',

@@ -1,5 +1,8 @@
 <template>
-  <div class="app-container">
+  <div class="app-container" v-if="showyemian">
+    <div class="tishi"> 请完善个人信息</div>
+  </div>
+  <div class="app-container" v-else>
     <el-table
       :data="ProjectInstanceList"
       border
@@ -61,8 +64,13 @@ export default {
   methods: {
     fetchData() {
       getEnrollProjectInstanceList({ 'session': document.cookie }).then(res => {
-        this.ProjectInstanceList = res.data.projectList
-        this.retType = res.data.retType
+        if(res.re === -1){
+           this.showyemian = true
+        }else {
+          this.ProjectInstanceList = res.data.projectList
+          this.retType = res.data.retType
+        }
+
       })
     },
     entry(instanceId){
@@ -72,3 +80,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .tishi{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+
+
+  }
+</style>

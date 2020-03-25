@@ -78,7 +78,58 @@ export function enrollItemPersonApplyCancel(data) {
 
 export function getSelectPersonList(data) {
   return request({
-    url: '/enroll/getSelectPersonList',
+    url: '/person/getSelectPersonList',
+    method: 'POST',
+    data
+  })
+}
+
+export function enrollItemPersonApplyAdd(data) {
+  return request({
+    url: '/enroll/enrollItemPersonApplyAdd',
+    method: 'POST',
+    data
+  })
+}
+
+export function getEnrollProjectInfoListOfManage(data) {
+  return request({
+    url: '/enroll/getEnrollProjectInfoListOfManage',
+    method: 'POST',
+    data
+  })
+}
+export function getEnrollProjectInstanceListOfProject(data) {
+  return request({
+    url: '/enroll/getEnrollProjectInstanceListOfProject',
+    method: 'POST',
+    data
+  })
+}
+export function deleteEnrollProjectInstance(data) {
+  return request({
+    url: '/enroll/deleteEnrollProjectInstance',
+    method: 'POST',
+    data
+  })
+}
+export function getEnrollProjectInstanceDetail(data) {
+  return request({
+    url: '/enroll/getEnrollProjectInstanceDetail',
+    method: 'POST',
+    data
+  })
+}
+export function saveOrUpdateEnrollProjectInstance(data) {
+  return request({
+    url: '/enroll/saveOrUpdateEnrollProjectInstance',
+    method: 'POST',
+    data
+  })
+}
+export function deleteEnrollInstanceItem(data) {
+  return request({
+    url: '/enroll/deleteEnrollInstanceItem',
     method: 'POST',
     data
   })
