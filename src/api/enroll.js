@@ -16,3 +16,70 @@ export function personBaseInfoMaintain(data) {
       data
     })
   }
+
+
+
+export function getEnrollProjectInstanceList(data) {
+  return request({
+    url: '/enroll/getEnrollProjectInstanceList',
+    method: 'POST',
+    data
+  })
+}
+export function enrollProjectInstanceApply(data) {
+  return request({
+    url: '/enroll/enrollProjectInstanceApply',
+    method: 'POST',
+    data
+  })
+}
+export function enrollProjectInstanceItemSubmit(data) {
+  return request({
+    url: '/enroll/enrollProjectInstanceItemSubmit',
+    method: 'POST',
+    data
+  })
+}
+
+
+export function getEnrollProjectInstanceListOfManage(data) {
+  return request({
+    url: '/enroll/getEnrollProjectInstanceListOfManage',
+    method: 'POST',
+    data
+  })
+}
+
+export function getEnrollProjectInstanceAndItemList(data) {
+  return request({
+    url: '/enroll/getEnrollProjectInstanceAndItemList',
+    method: 'POST',
+    data
+  })
+}
+export function getEnrollItemPersonList(data) {
+  return request({
+    url: '/enroll/getEnrollItemPersonList',
+    method: 'POST',
+    data
+  })
+}
+
+
+
+export function enrollItemPersonApplyCancel(data) {
+  return request({
+    url: '/enroll/enrollItemPersonApplyCancel',
+    method: 'POST',
+    data
+  })
+}
+
+
+export function getSelectPersonList(data) {
+  return request({
+    url: '/enroll/getSelectPersonList',
+    method: 'POST',
+    data
+  })
+}

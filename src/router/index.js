@@ -73,7 +73,29 @@ export const constantRoutes = [
       name: 'enrollInstanceApply',
       component: () => import('@/views/enroll/enrollInstanceApply'),
       meta: {title: '申请报名', icon: 'example', roles: ['9'] },
-    }]
+    },
+      {
+        path: 'enrollinstaceitem',
+        name: 'enrollinstaceitem',
+        component: () => import('@/views/enroll/enrollinstaceitem'),
+        hidden: true,
+        meta: {title: '选择报名', icon: 'example' },
+      },
+      {
+        path: 'enrollInstanceBaoming',
+        name: 'enrollInstanceBaoming',
+        component: () => import('@/views/enroll/enrollInstanceBaoming'),
+        hidden: true,
+        meta: {title: '报名', icon: 'example' },
+      },
+      {
+        path: 'enrollInstanceSuc',
+        name: 'enrollInstanceSuc',
+        component: () => import('@/views/enroll/enrollInstanceSuc'),
+        hidden: true,
+        meta: {title: '报名成功', icon: 'example' },
+      }
+    ]
 
   },
   {
@@ -95,7 +117,22 @@ export const constantRoutes = [
       name: 'enrollInstanceManage',
       component: () => import('@/views/enroll/enrollInstanceManage'),
       meta: {title: '报名管理', icon: 'example', roles: ['7'] },
-    }]
+    },
+      {
+        path: 'enrollInstanceManageList',
+        name: 'enrollInstanceManageList',
+        component: () => import('@/views/enroll/enrollInstanceManageList'),
+        hidden: true,
+        meta: {title: '报名列表', icon: 'example' },
+      },
+      {
+        path: 'enrollInstanceMangePerson',
+        name: 'enrollInstanceMangePerson',
+        component: () => import('@/views/enroll/enrollInstanceMangePerson'),
+        hidden: true,
+        meta: {title: '管理人员', icon: 'example' },
+      }
+    ]
 
   },
 

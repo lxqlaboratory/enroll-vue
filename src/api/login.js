@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function webLogin(jsonForm) {
   return request({
-    url: '/auth/webCasLogin',
+    url: '/auth/webLogin',
     method: 'POST',
     data: jsonForm
   })

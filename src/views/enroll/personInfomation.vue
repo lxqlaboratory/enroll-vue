@@ -2,6 +2,9 @@
   <div class="app-container">
     <table class="content">
       <tr>
+        <td colspan="6" style="font-size: 16px;font-weight: bold;color: #304156 ">个人基本信息</td>
+      </tr>
+      <tr>
         <td colspan="1" width = "200" >工号或学号</td>
         <td colspan="1">{{form.perNum}}</td>
       </tr>
