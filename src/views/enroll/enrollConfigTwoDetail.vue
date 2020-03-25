@@ -117,6 +117,28 @@
       </td>
     </tr>
   </table>
+
+    <table class="content">
+      <tr>
+        <td colspan="6" style="font-size: 16px;font-weight: bold;color: #304156 ">项目具体</td>
+      </tr>
+      <tr>
+        <td colspan="1" >名称</td>
+        <td colspan="2">
+          <el-input v-model="item.itemName" placeholder="名称" ></el-input>
+        </td>
+        <td colspan="1" >需要人数</td>
+        <td colspan="2">
+          <el-input v-model.number="item.needCount" placeholder="需要人数" ></el-input>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" >属性1</td>
+        <td colspan="5">
+          <el-input v-model="item.attribute1" placeholder="名称" ></el-input>
+        </td>
+      </tr>
+    </table>
   <div align="center">
     <el-button type="primary" @click="submit" >保存并提交</el-button>
   </div>
@@ -158,7 +180,12 @@
         instanceId: '',
         instanceName: '',
         retType: '',
-        itemList: []
+        item: {
+          itemId: '',
+          itemName: '',
+          needCount: '',
+          attribute1: ''
+        }
       }
     },
     created() {
@@ -170,16 +197,16 @@
         this.instanceId = this.$route.query.instanceId
         getEnrollProjectInstanceDetail({'instanceId': this.instanceId}).then(res => {
           this.instance = res.data.instance
-          this.itemList = res.data.itemList
           this.index = res.data.instance.limitTypeIndex
           this.limitTypeList = res.data.instance.limitTypeList
-
+          this.item = res.data.item
         }).catch(err => {
 
         })
       },
       submit(){
-        saveOrUpdateEnrollProjectInstance({instance: this.instance,projectId: this.projectId}).then(res => {
+        var projectIds = this.projectId+''
+        saveOrUpdateEnrollProjectInstance({'instance': this.instance,'projectId': projectIds,'item':this.item}).then(res => {
           if (res.re === 1) {
             this.$message({
               message: '保存成功',

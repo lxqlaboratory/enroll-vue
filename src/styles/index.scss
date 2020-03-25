@@ -149,3 +149,21 @@ div:focus {
 .konghang{
   margin-top: 10px;
 }
+
+.el-message-box{
+  border: 1px solid #333333;
+}
+.el-message--success{
+  height: 120px;
+  font-size: 50px;
+  background-color: rgb(236,245,255);
+}
+.el-message__content{
+  color: #333333 !important;
+  font-size: 15px;
+}
+.el-message--error{
+  height: 120px;
+  font-size: 50px;
+  background-color: rgb(236,245,255);
+}

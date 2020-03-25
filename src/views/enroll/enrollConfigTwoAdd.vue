@@ -117,6 +117,28 @@
         </td>
       </tr>
     </table>
+
+    <table class="content">
+      <tr>
+        <td colspan="6" style="font-size: 16px;font-weight: bold;color: #304156 ">项目具体</td>
+      </tr>
+      <tr>
+        <td colspan="1" >名称</td>
+        <td colspan="2">
+          <el-input v-model="item.itemName" placeholder="名称" ></el-input>
+        </td>
+        <td colspan="1" >需要人数</td>
+        <td colspan="2">
+          <el-input v-model.number="item.needCount" placeholder="需要人数" ></el-input>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" >属性1</td>
+        <td colspan="5">
+          <el-input v-model="item.attribute1" placeholder="名称" ></el-input>
+        </td>
+      </tr>
+    </table>
     <div align="center">
       <el-button type="primary" @click="submit" >保存并提交</el-button>
     </div>
@@ -127,7 +149,6 @@
   import Tinymce from '@/components/Tinymce'
   import { getEnrollProjectInstanceDetail } from '@/api/enroll'
   import { saveOrUpdateEnrollProjectInstance } from '@/api/enroll'
-  import { deleteEnrollInstanceItem } from '@/api/enroll'
   export default {
     name: 'enrollConfigTwoAdd',
     components: { Tinymce},
@@ -158,7 +179,12 @@
         instanceId: '',
         instanceName: '',
         retType: '',
-        itemList: []
+        item: {
+          itemId: '',
+          itemName: '',
+          needCount: '',
+          attribute1: ''
+        }
       }
     },
     created() {
@@ -166,18 +192,31 @@
     },
     methods: {
       fetchData() {
+        this.projectId = this.$route.query.projectId
         getEnrollProjectInstanceDetail().then(res => {
           this.instance = res.data.instance
           this.itemList = res.data.itemList
           this.index = res.data.instance.limitTypeIndex
           this.limitTypeList = res.data.instance.limitTypeList
-
+          this.item = res.data.item
         }).catch(err => {
 
         })
       },
-      entry(projectId,projectType){
-        this.$router.push({ path: 'enrollConfigTwo', query: { 'projectId':projectId }})
+      submit(){
+        var projectIds = this.projectId+''
+        saveOrUpdateEnrollProjectInstance({'instance': this.instance,'projectId': projectIds,'item':this.item}).then(res => {
+          if (res.re === 1) {
+            this.$message({
+              message: '保存成功',
+              type: 'sucess'
+            })
+            this.$router.push({ path: 'enrollInstanceConfig'})
+          }
+        }).catch(err => {
+
+        })
+
       }
 
     }

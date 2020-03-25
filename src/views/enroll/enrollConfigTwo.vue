@@ -56,6 +56,12 @@
         </template>
       </el-table-column>
     </el-table>
+    <div class="konghang">
+
+    </div>
+    <div align="center">
+      <el-button type="primary" @click="submit" >添加</el-button>
+    </div>
   </div>
 </template>
 
@@ -89,6 +95,9 @@ export default {
     },
     edit(instanceId) {
       this.$router.push({ path: 'enrollConfigTwoDetail', query: { 'instanceId': instanceId, 'projectId': this.$route.query.projectId }})
+    },
+    submit(){
+      this.$router.push({ path: 'enrollConfigTwoAdd', query: { 'projectId': this.$route.query.projectId}} )
     },
     deletepro(instanceId) {
       this.$confirm('是否删除', '提示', {

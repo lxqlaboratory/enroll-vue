@@ -70,7 +70,7 @@
         })
       },
       entry(projectId,projectType){
-        this.$router.push({ path: 'enrollConfigTwo', query: { 'projectId':projectId }})
+        this.$router.push({ path: 'enrollConfigTwo', query: { 'projectId': projectId }})
       }
 
     }
