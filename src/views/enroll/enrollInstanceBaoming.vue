@@ -48,12 +48,8 @@
         })
       },
       submit(){
-        if(this.retType === 4)
-        {
-          this.$router.push({ path: 'enrollInstanceSuc',query: { 'instanceId':this.instanceId}})
-        }else if(this.retType === 3){
+
           this.$router.push({ path: 'enrollinstaceitem' ,query: { 'instanceId':this.instanceId}})
-        }
 
       }
     }

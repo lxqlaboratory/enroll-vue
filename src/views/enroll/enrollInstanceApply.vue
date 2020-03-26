@@ -36,7 +36,7 @@
         color="black"
       >
         <template slot-scope="scope">
-          <el-button type="primary" @click="entry(scope.row.instanceId)" size="mini" >进入报名</el-button>
+          <el-button type="primary" @click="entry(scope.row.instanceId,scope.row.isApply)" size="mini" >进入报名</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -69,12 +69,29 @@ export default {
         }else {
           this.ProjectInstanceList = res.data.projectList
           this.retType = res.data.retType
+
+          if(this.retType === 1){
+            this.showyemian = true;
+          }
+          if(this.ProjectInstanceList.length === 1){
+            if(this.ProjectInstanceList[0].isApply === true)
+            {
+              this.$router.push({ path: 'enrollInstanceSuc',query: { 'instanceId':this.ProjectInstanceList[0].instanceId}})
+            }else if(this.ProjectInstanceList[0].isApply === false){
+              this.$router.push({ path: 'enrollInstanceBaoming',query: { 'instanceId':this.ProjectInstanceList[0].instanceId}})
+            }
+          }
         }
 
       })
     },
-    entry(instanceId){
-      this.$router.push({ path: 'enrollInstanceBaoming', query: { instanceId }})
+    entry(instanceId,isApply){
+      if(isApply === true){
+        this.$router.push({ path: 'enrollInstanceSuc',query: { instanceId}})
+      }else {
+        this.$router.push({ path: 'enrollInstanceBaoming', query: { instanceId }})
+      }
+
     }
 
   }

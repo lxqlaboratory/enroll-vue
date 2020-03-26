@@ -32,6 +32,16 @@
       </template>
     </el-table-column>
     <el-table-column
+      label="详细"
+      align="center"
+      color="black"
+      v-if="isAuxiliary"
+    >
+      <template slot-scope="scope">
+        {{ scope.row.auxiliaryStr }}
+      </template>
+    </el-table-column>
+    <el-table-column
       label="需要人数"
       align="center"
       color="black"
@@ -90,6 +100,25 @@
         </template>
       </el-table-column>
       <el-table-column
+        label="详细"
+        align="center"
+        color="black"
+        v-if="isAuxiliary"
+      >
+        <template slot-scope="scope">
+          {{ scope.row.auxiliaryStr }}
+        </template>
+      </el-table-column>
+      <el-table-column
+        label="需要人数"
+        align="center"
+        color="black"
+      >
+        <template slot-scope="scope">
+          {{ scope.row.needCount }}
+        </template>
+      </el-table-column>
+      <el-table-column
         label="操作"
         align="center"
         color="black"
@@ -111,6 +140,7 @@
       return {
         instanceId: '',
         retType: '',
+        isAuxiliary:false,
         candidateList: [],
         applyList: []
       }
@@ -125,6 +155,7 @@
         enrollProjectInstanceApply({ 'session': document.cookie ,'instanceId': this.$route.query.instanceId }).then(res => {
           this.candidateList = res.data.candidateList
           this.applyList = res.data.applyList
+          this.isAuxiliary = res.data.isAuxiliary
         })
       },
       entryApply(itemId,enrollMode,itemName){
