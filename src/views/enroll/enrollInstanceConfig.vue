@@ -70,7 +70,10 @@
         })
       },
       entry(projectId,projectType){
-        this.$router.push({ path: 'enrollConfigTwo', query: { 'projectId': projectId }})
+        if(projectType==='01'){
+          this.$router.push({ path: 'enrollConfigTwo', query: { 'projectId': projectId }})
+        }
+
       }
 
     }
