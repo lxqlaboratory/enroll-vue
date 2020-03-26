@@ -73,7 +73,9 @@
         if(projectType==='01'){
           this.$router.push({ path: 'enrollConfigTwo', query: { 'projectId': projectId }})
         }
-
+        if(projectType==='02'){
+          this.$router.push({ path: 'enrollConfigAddMany', query: { 'projectId': projectId }})
+        }
       }
 
     }

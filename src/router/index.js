@@ -50,7 +50,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '系统通知', icon: 'dashboard', roles: ['18']}
+      meta: { title: '系统通知', icon: 'dashboard'}
     }]
     // meta: { title: '首页', icon: 'dashboard',roles: ['18'] }
   },
@@ -111,12 +111,26 @@ export const constantRoutes = [
       name: 'enrollConfigTwo',
       component: () => import('@/views/enroll/enrollConfigTwo'),
       hidden: true,
-      meta: {title: '类型2统计信息', icon: 'example' },
+      meta: {title: '类型1统计信息', icon: 'example' },
     },
+      {
+        path: 'enrollConfigAddMany',
+        name: 'enrollConfigAddMany',
+        component: () => import('@/views/enroll/enrollConfigAddMany'),
+        hidden: true,
+        meta: {title: '类型2统计信息', icon: 'example' },
+      },
       {
         path: 'enrollConfigTwoDetail',
         name: 'enrollConfigTwoDetail',
         component: () => import('@/views/enroll/enrollConfigTwoDetail'),
+        hidden: true,
+        meta: {title: '编辑', icon: 'example' },
+      },
+      {
+        path: 'enrollConfigManyDetail',
+        name: 'enrollConfigManyDetail',
+        component: () => import('@/views/enroll/enrollConfigManyDetail'),
         hidden: true,
         meta: {title: '编辑', icon: 'example' },
       }
