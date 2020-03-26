@@ -97,7 +97,7 @@
         this.$router.push({ path: 'enrollConfigManyDetail', query: { 'instanceId': instanceId, 'projectId': this.$route.query.projectId }})
       },
       submit(){
-        this.$router.push({ path: 'enrollConfigTwoAdd', query: { 'projectId': this.$route.query.projectId}} )
+        this.$router.push({ path: 'enrollConfigManyAddReal', query: { 'projectId': this.$route.query.projectId}} )
       },
       deletepro(instanceId) {
         this.$confirm('是否删除', '提示', {

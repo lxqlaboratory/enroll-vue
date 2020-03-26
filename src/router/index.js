@@ -133,6 +133,27 @@ export const constantRoutes = [
         component: () => import('@/views/enroll/enrollConfigManyDetail'),
         hidden: true,
         meta: {title: '编辑', icon: 'example' },
+      },
+      {
+        path: 'enrollConfigManyAddReal',
+        name: 'enrollConfigManyAddReal',
+        component: () => import('@/views/enroll/enrollConfigManyAddReal'),
+        hidden: true,
+        meta: {title: '添加', icon: 'example' },
+      },
+      {
+        path: 'enrollConfigItemOnlyAdd',
+        name: 'enrollConfigItemOnlyAdd',
+        component: () => import('@/views/enroll/enrollConfigItemOnlyAdd'),
+        hidden: true,
+        meta: {title: '添加', icon: 'example' },
+      },
+      {
+        path: 'enrollConfigItemEdit',
+        name: 'enrollConfigItemEdit',
+        component: () => import('@/views/enroll/enrollConfigItemEdit'),
+        hidden: true,
+        meta: {title: '编辑', icon: 'example' },
       }
     ]
 

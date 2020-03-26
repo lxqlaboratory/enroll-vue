@@ -134,3 +134,18 @@ export function deleteEnrollInstanceItem(data) {
     data
   })
 }
+export function getEnrollInstanceItemDetail(data) {
+  return request({
+    url: '/enroll/getEnrollInstanceItemDetail',
+    method: 'POST',
+    data
+  })
+}
+
+export function saveOrUpdateEnrollInstanceItem(data) {
+  return request({
+    url: '/enroll/saveOrUpdateEnrollInstanceItem',
+    method: 'POST',
+    data
+  })
+}

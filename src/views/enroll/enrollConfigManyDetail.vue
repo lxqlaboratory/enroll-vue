@@ -35,7 +35,7 @@
           <el-time-picker
             arrow-control
             v-model="instance.enrollStartTime"
-            value-format="HH-mm-ss"
+            value-format="HH:mm:ss"
             placeholder="报名开始时间">
           </el-time-picker>
         </td>
@@ -65,7 +65,7 @@
           <el-time-picker
             arrow-control
             v-model="instance.enrollEndTime"
-            value-format="HH-mm-ss"
+            value-format="HH:mm:ss"
             placeholder="报名开始时间">
           </el-time-picker>
         </td>
@@ -85,7 +85,7 @@
           <el-time-picker
             arrow-control
             v-model="instance.viewStartTime"
-            value-format="HH-mm-ss"
+            value-format="HH:mm:ss"
             placeholder="结果发布开始时间">
           </el-time-picker>
         </td>
@@ -103,7 +103,7 @@
           <el-time-picker
             arrow-control
             v-model="instance.viewEndTime"
-            value-format="HH-mm-ss"
+            value-format="HH:mm:ss"
             placeholder="结果发布开始时间">
           </el-time-picker>
         </td>
@@ -166,11 +166,17 @@
         color="black"
       >
         <template slot-scope="scope">
-          <el-button type="primary" @click="entry(scope.row.instanceId)" size="mini" >编辑</el-button>
-          <el-button type="danger" @click="entry(scope.row.instanceId)" size="mini" >删除</el-button>
+          <el-button type="primary" @click="editItem(scope.row.itemId)" size="mini" >编辑</el-button>
+          <el-button type="danger" @click="deleteItem(scope.row.itemId)" size="mini" >删除</el-button>
         </template>
       </el-table-column>
     </el-table>
+    <div class="konghang">
+
+    </div>
+    <div align="center">
+      <el-button type="primary" @click="addItem" >添加</el-button>
+    </div>
   </div>
 </template>
 
@@ -243,8 +249,41 @@
 
         })
 
+      },
+      addItem(){
+        this.$router.push({ path: 'enrollConfigItemOnlyAdd', query: { 'instanceId': this.instanceId}})
+      },
+      editItem(itemId){
+        this.$router.push({ path: 'enrollConfigItemEdit', query: { 'itemId': itemId}})
+      },
+      deleteItem(itemId){
+        this.$confirm('是否删除', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          deleteEnrollInstanceItem({ 'session': document.cookie, 'itemId': itemId }).then(res => {
+            if (res.re === 1) {
+              this.$message({
+                message: '删除',
+                type: 'sucess'
+              })
+              this.fetchData()
+            } else {
+              this.$message({
+                message: '存在申请人，不能删除',
+                type: 'warning'
+              })
+              this.fetchData()
+            }
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消'
+          })
+        })
       }
-
     }
   }
 </script>

@@ -35,7 +35,7 @@
           <el-time-picker
             arrow-control
             v-model="instance.enrollStartTime"
-            value-format="HH-mm-ss"
+            value-format="HH:mm:ss"
             placeholder="报名开始时间">
           </el-time-picker>
         </td>
@@ -65,7 +65,7 @@
           <el-time-picker
             arrow-control
             v-model="instance.enrollEndTime"
-            value-format="HH-mm-ss"
+            value-format="HH:mm:ss"
             placeholder="报名开始时间">
           </el-time-picker>
         </td>
@@ -85,7 +85,7 @@
           <el-time-picker
             arrow-control
             v-model="instance.viewStartTime"
-            value-format="HH-mm-ss"
+            value-format="HH:mm:ss"
             placeholder="结果发布开始时间">
           </el-time-picker>
         </td>
@@ -103,7 +103,7 @@
           <el-time-picker
             arrow-control
             v-model="instance.viewEndTime"
-            value-format="HH-mm-ss"
+            value-format="HH:mm:ss"
             placeholder="结果发布开始时间">
           </el-time-picker>
         </td>
@@ -136,6 +136,24 @@
         <td colspan="1" >属性1</td>
         <td colspan="5">
           <el-input v-model="item.attribute1" placeholder="名称" ></el-input>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" >属性2</td>
+        <td colspan="5">
+          <el-input v-model="item.attribute2" placeholder="名称" ></el-input>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" >属性3</td>
+        <td colspan="5">
+          <el-input v-model="item.attribute3" placeholder="名称" ></el-input>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1" >属性4</td>
+        <td colspan="5">
+          <el-input v-model="item.attribute4" placeholder="名称" ></el-input>
         </td>
       </tr>
     </table>
@@ -176,7 +194,10 @@
           itemId: '',
           itemName: '',
           needCount: '',
-          attribute1: ''
+          attribute1: '',
+          attribute2: '',
+          attribute3: '',
+          attribute4: ''
         }
       }
     },
