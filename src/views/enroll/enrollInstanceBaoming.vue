@@ -6,8 +6,6 @@
    </tr>
      <tr>
        <td colspan="6" v-html="instanceDes">
-
-
        </td>
      </tr>
    </table>
