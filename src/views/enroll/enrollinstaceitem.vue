@@ -171,7 +171,7 @@
                 message: "报名成功",
                 type: 'sucess'
               });
-              this.$router.push({ path: 'enrollInstanceSuc'})
+              this.$router.push({ path: 'enrollInstanceSuc',query: { 'instanceId':this.instanceId}})
             }else {
               this.$message({
                 message: "报名已满",

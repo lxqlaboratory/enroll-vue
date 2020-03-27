@@ -1,10 +1,22 @@
 <template>
 <div class="app-container">
    <div class="tishi"> 您已经成功报名！！！</div>
-  <el-button >
+  <table class="content">
+    <tr>
+      <td colspan="6" style="font-size: 16px;font-weight: bold;color: #304156 ">{{instanceName}}</td>
+    </tr>
+    <tr v-for="item in resultList">
+      <td>
+        {{item}}
+      </td>
+    </tr>
+  </table>
+  <div align="center">
+  <el-button class="button1">
     <a :href="serverAddres+'/func/enroll/downloadEnrollAppointment?itemPersonId='+itemPersonId" download="报名.pdf">下载pdf</a>
   </el-button>
 </div>
+  </div>
 </template>
 
 <script>
@@ -13,10 +25,12 @@
     name: 'enrollInstanceSuc',
     data() {
       return {
+        resultList: [],
         serverAddres: '',
         itemPersonId: '',
         instanceId: '',
         retType: '',
+        instanceName: '',
         candidateList: [],
         applyList: []
       }
@@ -34,6 +48,8 @@
           'instanceId': this.$route.query.instanceId
         }).then(res => {
           this.itemPersonId = res.data.itemPersonId
+          this.resultList = res.data.resultList
+          this.instanceName = res.data.instanceName
         })
       }
     }
@@ -44,8 +60,12 @@
 .tishi{
   text-align: center;
   font-weight: bold;
-  font-size: 30px;
-
+  font-size: 15px;
+color: red;
 
 }
+  .button1{
+    background-color: rgb(64,158,255);
+    color: white;
+  }
 </style>
