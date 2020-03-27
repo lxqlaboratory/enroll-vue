@@ -66,6 +66,8 @@ export default {
     this.fetchData()
   },
   methods: {
+
+    
     fetchData() {
       personBaseInfoMaintainInit({ 'session': document.cookie ,'personId': this.$route.query.personId }).then(res => {
         console.log(res.data);
