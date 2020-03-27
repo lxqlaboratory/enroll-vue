@@ -50,7 +50,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '系统通知', icon: 'dashboard'}
+      meta: { title: '系统通知', icon: 'dashboard' }
     }]
     // meta: { title: '首页', icon: 'dashboard',roles: ['18'] }
   },
@@ -61,7 +61,7 @@ export const constantRoutes = [
       path: 'personInfomation',
       name: 'personInfomation',
       component: () => import('@/views/enroll/personInfomation'),
-      meta: {title: '个人信息', icon: 'example', roles: ['8'] },
+      meta: { title: '个人信息', icon: 'example', roles: ['8'] }
     }]
 
   },
@@ -72,29 +72,29 @@ export const constantRoutes = [
       path: 'enrollInstanceApply',
       name: 'enrollInstanceApply',
       component: () => import('@/views/enroll/enrollInstanceApply'),
-      meta: {title: '申请报名', icon: 'example', roles: ['9'] },
+      meta: { title: '申请报名', icon: 'example', roles: ['9'] }
     },
-      {
-        path: 'enrollinstaceitem',
-        name: 'enrollinstaceitem',
-        component: () => import('@/views/enroll/enrollinstaceitem'),
-        hidden: true,
-        meta: {title: '选择报名', icon: 'example' },
-      },
-      {
-        path: 'enrollInstanceBaoming',
-        name: 'enrollInstanceBaoming',
-        component: () => import('@/views/enroll/enrollInstanceBaoming'),
-        hidden: true,
-        meta: {title: '报名', icon: 'example' },
-      },
-      {
-        path: 'enrollInstanceSuc',
-        name: 'enrollInstanceSuc',
-        component: () => import('@/views/enroll/enrollInstanceSuc'),
-        hidden: true,
-        meta: {title: '报名成功', icon: 'example' },
-      }
+    {
+      path: 'enrollinstaceitem',
+      name: 'enrollinstaceitem',
+      component: () => import('@/views/enroll/enrollinstaceitem'),
+      hidden: true,
+      meta: { title: '选择报名', icon: 'example' }
+    },
+    {
+      path: 'enrollInstanceBaoming',
+      name: 'enrollInstanceBaoming',
+      component: () => import('@/views/enroll/enrollInstanceBaoming'),
+      hidden: true,
+      meta: { title: '报名', icon: 'example' }
+    },
+    {
+      path: 'enrollInstanceSuc',
+      name: 'enrollInstanceSuc',
+      component: () => import('@/views/enroll/enrollInstanceSuc'),
+      hidden: true,
+      meta: { title: '报名成功', icon: 'example' }
+    }
     ]
 
   },
@@ -102,11 +102,19 @@ export const constantRoutes = [
     path: '/enroll',
     component: Layout,
     children: [{
-      path: 'personInfomation',
-      name: 'personInfomation',
-      component: () => import('@/views/enroll/personInfomation'),
-      meta: {title: '历史查询', icon: 'example', roles: ['10'] },
-    }]
+      path: 'enrollApplyHistoryQuery',
+      name: 'enrollApplyHistoryQuery',
+      component: () => import('@/views/enroll/enrollApplyHistoryQuery'),
+      meta: { title: '历史查询', icon: 'example', roles: ['10'] }
+    },
+
+      {
+        path: 'enrollApplyHistorDetai',
+        name: 'enrollApplyHistorDetai',
+        component: () => import('@/views/enroll/enrollApplyHistorDetai'),
+        hidden: true,
+        meta: { title: '历史', icon: 'example' }
+      }]
 
   },
   {
@@ -116,56 +124,56 @@ export const constantRoutes = [
       path: 'enrollInstanceConfig',
       name: 'enrollInstanceConfig',
       component: () => import('@/views/enroll/enrollInstanceConfig'),
-      meta: {title: '报名设置', icon: 'example', roles: ['6'] },
+      meta: { title: '报名设置', icon: 'example', roles: ['6'] }
     }, {
       path: 'enrollConfigTwo',
       name: 'enrollConfigTwo',
       component: () => import('@/views/enroll/enrollConfigTwo'),
       hidden: true,
-      meta: {title: '类型1设置', icon: 'example' },
+      meta: { title: '类型1设置', icon: 'example' }
     },
-      {
-        path: 'enrollConfigAddMany',
-        name: 'enrollConfigAddMany',
-        component: () => import('@/views/enroll/enrollConfigAddMany'),
-        hidden: true,
-        meta: {title: '类型2设置', icon: 'example' },
-      },
-      {
-        path: 'enrollConfigTwoDetail',
-        name: 'enrollConfigTwoDetail',
-        component: () => import('@/views/enroll/enrollConfigTwoDetail'),
-        hidden: true,
-        meta: {title: '编辑', icon: 'example' },
-      },
-      {
-        path: 'enrollConfigManyDetail',
-        name: 'enrollConfigManyDetail',
-        component: () => import('@/views/enroll/enrollConfigManyDetail'),
-        hidden: true,
-        meta: {title: '编辑', icon: 'example' },
-      },
-      {
-        path: 'enrollConfigManyAddReal',
-        name: 'enrollConfigManyAddReal',
-        component: () => import('@/views/enroll/enrollConfigManyAddReal'),
-        hidden: true,
-        meta: {title: '添加', icon: 'example' },
-      },
-      {
-        path: 'enrollConfigItemOnlyAdd',
-        name: 'enrollConfigItemOnlyAdd',
-        component: () => import('@/views/enroll/enrollConfigItemOnlyAdd'),
-        hidden: true,
-        meta: {title: '添加', icon: 'example' },
-      },
-      {
-        path: 'enrollConfigItemEdit',
-        name: 'enrollConfigItemEdit',
-        component: () => import('@/views/enroll/enrollConfigItemEdit'),
-        hidden: true,
-        meta: {title: '编辑', icon: 'example' },
-      }
+    {
+      path: 'enrollConfigAddMany',
+      name: 'enrollConfigAddMany',
+      component: () => import('@/views/enroll/enrollConfigAddMany'),
+      hidden: true,
+      meta: { title: '类型2设置', icon: 'example' }
+    },
+    {
+      path: 'enrollConfigTwoDetail',
+      name: 'enrollConfigTwoDetail',
+      component: () => import('@/views/enroll/enrollConfigTwoDetail'),
+      hidden: true,
+      meta: { title: '编辑', icon: 'example' }
+    },
+    {
+      path: 'enrollConfigManyDetail',
+      name: 'enrollConfigManyDetail',
+      component: () => import('@/views/enroll/enrollConfigManyDetail'),
+      hidden: true,
+      meta: { title: '编辑', icon: 'example' }
+    },
+    {
+      path: 'enrollConfigManyAddReal',
+      name: 'enrollConfigManyAddReal',
+      component: () => import('@/views/enroll/enrollConfigManyAddReal'),
+      hidden: true,
+      meta: { title: '添加', icon: 'example' }
+    },
+    {
+      path: 'enrollConfigItemOnlyAdd',
+      name: 'enrollConfigItemOnlyAdd',
+      component: () => import('@/views/enroll/enrollConfigItemOnlyAdd'),
+      hidden: true,
+      meta: { title: '添加', icon: 'example' }
+    },
+    {
+      path: 'enrollConfigItemEdit',
+      name: 'enrollConfigItemEdit',
+      component: () => import('@/views/enroll/enrollConfigItemEdit'),
+      hidden: true,
+      meta: { title: '编辑', icon: 'example' }
+    }
     ]
 
   },
@@ -176,29 +184,29 @@ export const constantRoutes = [
       path: 'enrollInstanceManage',
       name: 'enrollInstanceManage',
       component: () => import('@/views/enroll/enrollInstanceManage'),
-      meta: {title: '报名管理', icon: 'example', roles: ['7'] },
+      meta: { title: '报名管理', icon: 'example', roles: ['7'] }
     },
-      {
-        path: 'enrollInstanceManageList',
-        name: 'enrollInstanceManageList',
-        component: () => import('@/views/enroll/enrollInstanceManageList'),
-        hidden: true,
-        meta: {title: '报名列表', icon: 'example' },
-      },
-      {
-        path: 'enrollConfigTwoAdd',
-        name: 'enrollConfigTwoAdd',
-        component: () => import('@/views/enroll/enrollConfigTwoAdd'),
-        hidden: true,
-        meta: {title: '报名添加', icon: 'example' },
-      },
-      {
-        path: 'enrollInstanceMangePerson',
-        name: 'enrollInstanceMangePerson',
-        component: () => import('@/views/enroll/enrollInstanceMangePerson'),
-        hidden: true,
-        meta: {title: '管理人员', icon: 'example' },
-      }
+    {
+      path: 'enrollInstanceManageList',
+      name: 'enrollInstanceManageList',
+      component: () => import('@/views/enroll/enrollInstanceManageList'),
+      hidden: true,
+      meta: { title: '报名列表', icon: 'example' }
+    },
+    {
+      path: 'enrollConfigTwoAdd',
+      name: 'enrollConfigTwoAdd',
+      component: () => import('@/views/enroll/enrollConfigTwoAdd'),
+      hidden: true,
+      meta: { title: '报名添加', icon: 'example' }
+    },
+    {
+      path: 'enrollInstanceMangePerson',
+      name: 'enrollInstanceMangePerson',
+      component: () => import('@/views/enroll/enrollInstanceMangePerson'),
+      hidden: true,
+      meta: { title: '管理人员', icon: 'example' }
+    }
     ]
 
   },

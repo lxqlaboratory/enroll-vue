@@ -149,3 +149,19 @@ export function saveOrUpdateEnrollInstanceItem(data) {
     data
   })
 }
+
+export function getApplyedEnrollInstanceItemList(data) {
+  return request({
+    url: '/enroll/getApplyedEnrollInstanceItemList',
+    method: 'POST',
+    data
+  })
+}
+
+export function getApplyedEnrollInstanceItem(data) {
+  return request({
+    url: '/enroll/getApplyedEnrollInstanceItem',
+    method: 'POST',
+    data
+  })
+}
