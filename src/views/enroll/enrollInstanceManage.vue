@@ -33,7 +33,7 @@
         color="black"
       >
         <template slot-scope="scope">
-          <el-button type="primary" @click="entry(scope.row.instanceId)" size="mini" >查看历史</el-button>
+          <el-button type="primary" @click="entry(scope.row.instanceId)" size="mini" >管理报名</el-button>
         </template>
       </el-table-column>
     </el-table>

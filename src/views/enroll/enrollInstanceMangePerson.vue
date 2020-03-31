@@ -119,6 +119,24 @@
           </template>
         </el-table-column>
         <el-table-column
+          label="下载pdf次数"
+          align="center"
+          color="black"
+        >
+          <template slot-scope="scope">
+            {{ scope.row.downloadCount }}
+          </template>
+        </el-table-column>
+        <el-table-column
+          label="下载时间"
+          align="center"
+          color="black"
+        >
+          <template slot-scope="scope">
+            {{ scope.row.downloadTime }}
+          </template>
+        </el-table-column>
+        <el-table-column
           label="操作"
           align="center"
           color="black"
